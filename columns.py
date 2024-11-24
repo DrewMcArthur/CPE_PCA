@@ -1,0 +1,38 @@
+from enum import StrEnum
+
+class Columns(StrEnum):
+	CONTINENT="CONTINENT"
+	COUNTRY="COUNTRY"
+	COUNTRY_CODE="COUNTRY CODE"
+	DV_YEAR="DV YEAR"
+	COOPS="COOPS"
+	EMPLOYEES="EMPLOYEES"
+	WORKER_MEMBERS="WORKER-MEMBERS"
+	PRODUCER_MEMBERS="PRODUCER-MEMBERS"
+	USER_MEMBERS="USER-MEMBERS"
+	COOPS_per_capita="COOPS per capita"
+	EMPLOYEES_per_capita="EMPLOYEES per capita"
+	WORKER_MEMBERS_per_capita="WORKER-MEMBERS per capita"
+	PRODUCER_MEMBERS_per_capita="PRODUCER-MEMBERS per capita"
+	USER_MEMBERS_per_capita="USER-MEMBERS per capita"
+	Cooperative_Specific_Legislation="Cooperative-Specific Legislation"
+	Tax_policy="Tax policy"
+	Union_Density="Union Density"
+	collective_bargaining_coverage_rate="collective bargaining coverage rate"
+	natl_compliance_with_labor_rights="natl compliance with labor rights"
+	PCT_of_GDP_in_Agriculture="% of GDP in... Agriculture"
+	industry="industry"
+	manufacturing="manufacturing"
+	services="services"
+	Social_Capital="Social Capital"
+	Income_Inequality="Income Inequality"
+	Education="Education"
+	Collectivism_vs_Individualism="Collectivism vs Individualism"
+	Economic_Liberalism_Index="Economic Liberalism Index"
+	OECD_Social_Spending="OECD Social Spending"
+	HISTORICAL_INFLUENCE="Historical Influence"
+	POVERTY_RATES="Poverty Rates"
+	POPULATION="population"
+
+	def parse(s: str) -> 'Columns':
+		return { c.value.upper(): c for c in Columns.__members__.values() }[s.upper()]
